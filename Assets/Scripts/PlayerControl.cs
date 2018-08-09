@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankControl : MonoBehaviour
+public class PlayerControl : MonoBehaviour
 {
 
     private Rigidbody2D _rigidbody;
