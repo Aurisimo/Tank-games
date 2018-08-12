@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: TankBody
+    uniqueID: 1290496255
+    locked: 0
+  - name: TankTower
+    uniqueID: 343313309
+    locked: 0
