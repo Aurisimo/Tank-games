@@ -12,7 +12,7 @@ public class BackgroundControl : MonoBehaviour
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        _playerRigidBody = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        _playerRigidBody = GameObject.Find("TankBody").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -20,17 +20,28 @@ public class BackgroundControl : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            var xSpeed = Mathf.Cos((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
-            var ySpeed = Mathf.Sin((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
+            float xSpeed = GetXSpeed();
+            float ySpeed = GetYSpeed();
 
             _rigidBody.position = new Vector2(_rigidBody.position.x - xSpeed, _rigidBody.position.y - ySpeed);
         }
-        else if (Input.GetKey(KeyCode.DownArrow))
+
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            var xSpeed = Mathf.Cos((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
-            var ySpeed = Mathf.Sin((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
+            float xSpeed = GetXSpeed();
+            float ySpeed = GetYSpeed();
 
             _rigidBody.position = new Vector2(_rigidBody.position.x + xSpeed, _rigidBody.position.y + ySpeed);
         }
+    }
+
+    private float GetYSpeed()
+    {
+        return Mathf.Sin((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
+    }
+
+    private float GetXSpeed()
+    {
+        return Mathf.Cos((_playerRigidBody.rotation - 90) / 180 * (Mathf.PI)) * _speed;
     }
 }
