@@ -33,17 +33,17 @@ public class TankBodyControl : MonoBehaviour
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
 
-            _rigidBody.position = new Vector2(_rigidBody.position.x + xSpeed, _rigidBody.position.y + ySpeed);
+            _rigidBody.position = new Vector2(_rigidBody.position.x - xSpeed, _rigidBody.position.y - ySpeed);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
+
             float xSpeed = GetXSpeed();
             float ySpeed = GetYSpeed();
 
-            _rigidBody.position = new Vector2(_rigidBody.position.x - xSpeed, _rigidBody.position.y - ySpeed);
+            _rigidBody.position = new Vector2(_rigidBody.position.x + xSpeed, _rigidBody.position.y + ySpeed);
         }
-
     }
 
     private float GetYSpeed()
