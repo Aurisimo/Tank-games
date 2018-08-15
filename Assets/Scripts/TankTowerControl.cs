@@ -31,7 +31,7 @@ public class TankTowerControl : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            var clone = Instantiate(projectile, transform.position, transform.rotation);
+           // var clone = Instantiate(projectile, transform.position, transform.rotation);
         }
 
         _rigidBody.position = new Vector2(_bodyRigidbody.position.x, _bodyRigidbody.position.y);
