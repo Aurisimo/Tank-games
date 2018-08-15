@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour {
 
-	private const float _movingSpeed = 4;
+	private const float _movingSpeed = 0.4f;
 	private float _xSpeed;  
 	private float _ySpeed;
 	private Rigidbody2D _rigidbody;

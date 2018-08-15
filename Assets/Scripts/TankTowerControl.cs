@@ -7,7 +7,7 @@ public class TankTowerControl : MonoBehaviour
     private Rigidbody2D _rigidBody;
     private Rigidbody2D _bodyRigidbody;
     private readonly float _rotationSpeed = 2;
-    readonly Projectile projectile;
+    public Projectile Projectile;
 
     // Use this for initialization
     void Start()
@@ -29,9 +29,9 @@ public class TankTowerControl : MonoBehaviour
             _rigidBody.rotation -= _rotationSpeed;
         }
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-           // var clone = Instantiate(projectile, transform.position, transform.rotation);
+           Instantiate(Projectile, transform.position, transform.rotation);
         }
 
         _rigidBody.position = new Vector2(_bodyRigidbody.position.x, _bodyRigidbody.position.y);
