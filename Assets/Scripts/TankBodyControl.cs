@@ -7,7 +7,7 @@ public class TankBodyControl : MonoBehaviour
 
     private Rigidbody2D _rigidBody;
     private float _rotationSpeed = 1f;
-    private float _movingSpeed = 0.01f;
+    private float _movingSpeed = 0.05f;
 
     // Use this for initialization
     void Start()
