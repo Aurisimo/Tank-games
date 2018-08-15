@@ -55,4 +55,26 @@ public class TankBodyControl : MonoBehaviour
     {
         return Mathf.Cos((_rigidBody.rotation - 90) / 180 * (Mathf.PI)) * _movingSpeed;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        _movingSpeed = 2f;
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        _movingSpeed = 2f;
+        if (collision.gameObject.name == "Road1 (1)")
+        {            
+            Debug.Log("Faster Road");
+        }
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        _movingSpeed = 0.05f;
+        if (collision.gameObject.name == "Road1 (1)")
+        {            
+            Debug.Log("Slower Road");
+        }
+    }
 }
