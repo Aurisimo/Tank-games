@@ -5,12 +5,14 @@ using UnityEngine;
 public class TankTowerControl : MonoBehaviour
 {
     private Rigidbody2D _rigidBody;
-    private float _speed = 2;
+    private Rigidbody2D _bodyRigidbody;
+    private float _rotationSpeed = 2;
 
     // Use this for initialization
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
+        _bodyRigidbody = GameObject.Find("TankBody").GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -18,13 +20,14 @@ public class TankTowerControl : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A))
         {
-            _rigidBody.rotation += _speed;
+            _rigidBody.rotation += _rotationSpeed;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            _rigidBody.rotation -= _speed;
+            _rigidBody.rotation -= _rotationSpeed;
         }
 
+        _rigidBody.position = new Vector2(_bodyRigidbody.position.x, _bodyRigidbody.position.y);
     }
 }
